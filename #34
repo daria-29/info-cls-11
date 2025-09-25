@@ -1,0 +1,16 @@
+int interval(int a[], int n){
+    int minim, maxim, c = 0, i;
+    minim = a[0];
+    maxim = a[n-1];
+    if (minim > maxim){
+        int aux = minim;
+        minim = maxim;
+        maxim = aux;
+    }
+    for (i = 0; i <= n-1; i++){
+        if ((a[i] >= minim) && (a[i] <= maxim))
+            c++;
+    }
+    return c;
+        
+}
