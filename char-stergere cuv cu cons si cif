@@ -1,0 +1,30 @@
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+    char s[101];
+    cin.get(s,101);
+    int pi, pf, i;
+    pi = 0;
+    while(s[pi] != '\0'){
+        pf=pi;
+        while(s[pf] != ' ' && s[pf] != '\0'){
+            pf++;
+        }
+        pf--;
+        
+        char voc[11] = "aeiouAEIOU";
+        if(strchr(voc, s[pi] == 0) && isalpha(s[pi]) && isdigit(s[pf])){
+            strcpy(s+pi, s+ pf+1);
+            
+        }
+        pf=pi;
+        while(s[pi]==' ') pi++;
+        
+        
+    }
+    cout << s;
+    return 0;
+}
