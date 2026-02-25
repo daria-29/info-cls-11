@@ -1,0 +1,32 @@
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+    char s[101];
+    cin.get(s,101);
+    int pi, pf, i, c=0;
+    pi = 0;
+    while(s[pi] != '\0'){
+        pf=pi;
+        while(s[pf] != ' ' && s[pf] != '\0'){
+            pf++;
+        }
+        pf--;
+        int ok=0;//pp ca nu are cifre
+        i = pi;
+        while(i <=pf && ok==0){
+            if(s[i]>='0' && s[i] <='9'){
+                ok = 1;
+            }
+            i++;
+        }
+        if(ok) c++;
+        pi=pf+1;
+        while(pi==' ') pi++;
+        
+    }
+    cout << c;
+    return 0;
+}
