@@ -1,0 +1,37 @@
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+    char s[101];
+    cin.get(s,101);
+    int pi, pf,i;
+    pi = 0;
+    while(s[pi] != '\0'){
+        pf=pi;
+        while(s[pf] != ' ' && s[pf] != '\0'){
+            pf++;
+        }
+        pf--;
+        
+        char voc[11] = "aeiouAEIOU";
+        if(strchr(voc, s[pi])){
+            int st = pi, dr = pf;
+            while(st<dr){
+                char aux = s[dr];
+                s[dr] = s[st];
+                s[st] = aux;
+                st++;
+                dr--;
+            }
+        }
+        
+        pi=pf+1;
+        while(s[pi]==' ') pi++;
+        
+        
+    }
+    cout << s;
+    return 0;
+}
